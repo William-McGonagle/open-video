@@ -42,7 +42,7 @@ var Video = sequelize.define('video', {
 
 User.hasMany(Video); // Video Owners
 
-sequelize.sync({force: true});
+sequelize.sync();
 
 ////////////////
 // MIDDLEWARE //
@@ -211,13 +211,13 @@ app.post('/api/v1/video/upload', function (req, res) {
 
   if (req.files.video == undefined || req.files.icon == undefined) return res.sendStatus(400);
 
-  var iconPath = '/public/icon/' + new Date().getTime() + "-" + req.files.icon.name;
-  var videoPath = '/public/video/' + new Date().getTime() + "-" + req.files.video.name;
+  var iconPath = '/icon/' + new Date().getTime() + "-" + req.files.icon.name;
+  var videoPath = '/video/' + new Date().getTime() + "-" + req.files.video.name;
 
-  req.files.video.mv(__dirname + videoPath, function(err) {
+  req.files.video.mv(__dirname + "/public/" + videoPath, function(err) {
     if (err) return res.sendStatus(500);
 
-    req.files.icon.mv(__dirname + iconPath, function(err) {
+    req.files.icon.mv(__dirname + "/public/" + iconPath, function(err) {
       if (err) return res.sendStatus(500);
 
       Video.create({
@@ -239,6 +239,23 @@ app.post('/api/v1/video/upload', function (req, res) {
       });
 
     });
+
+  });
+
+});
+
+app.get('/api/v1/video/getAll/', function (req, res) {
+
+  Video.findAll({}).then(function (data) {
+
+    if (data.length == 0) return res.sendStatus(404);
+
+    return res.json(data);
+
+  }).error(function (error) {
+
+    console.log(error);
+    return res.sendStatus(500);
 
   });
 
