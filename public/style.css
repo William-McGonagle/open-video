@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.topbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 10vh;
+  background: #000;
+  z-index: 99;
+}
+.topbar .logo {
+  height: 8vh;
+  padding: 1vh;
+  box-sizing: content-box;
+}
+.topbar .hamburger {
+  height: 6vh;
+  padding: 2vh;
+  float: right;
+  transition: height 0.2s, padding 0.2s;
+  box-sizing: content-box;
+}
+.topbar .hamburger:hover {
+  height: 4vh;
+  padding: 3vh;
+  cursor: pointer;
+}
+.topbar .hamburger:active {
+  height: 5vh;
+  padding: 2.5vh;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0vw;
+  width: 100vw;
+  top: 10vh;
+  bottom: 0px;
+  background: #eee;
+  z-index: 9;
+}
+.sidebar .sidebarOption {
+  width: 100%;
+  padding: 4vh 5vw;
+  text-align: left;
+  font-size: 4vh;
+}
+.sidebar .sidebarOption:hover, .sidebar .sidebarOption:active {
+  background: #ddd;
+  cursor: pointer;
+}
+
+.main {
+  position: fixed;
+  top: 10vh;
+  left: 0vw;
+  right: 0vw;
+  bottom: 0vh;
+  padding: 5vw;
+  overflow-y: scroll;
+}
+.main .item {
+  width: 100%;
+  background: red;
+  border-radius: 5vw;
+  padding: 5vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 30vh;
+  margin: 0px 0px 2.5vh 0px;
+}
+.main .item h1 {
+  font-size: 4vh;
+  margin: 0px;
+}
+.main .item h3 {
+  font-size: 2.5vh;
+  margin: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */
