@@ -1,0 +1,30 @@
+{
+  "name": "open-video",
+  "version": "0.0.1",
+  "description": "An open source project that lets anyone create their own video hosting site. This was inspired by an online poll.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/William-McGonagle/open-video.git"
+  },
+  "keywords": [
+    "video",
+    "opensource",
+    "free",
+    "template"
+  ],
+  "author": "William McGonagle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/William-McGonagle/open-video/issues"
+  },
+  "homepage": "https://github.com/William-McGonagle/open-video#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
