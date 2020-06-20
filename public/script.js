@@ -4,6 +4,8 @@ $( document ).ready(function() {
 
   $.get('/api/v1/video/getAll/', function (data) {
 
+    addUpload();
+
     for (var i = 0; i < data.length; i++) {
 
       addVideo(data[i].id, data[i].iconPath, data[i].title, "");
@@ -13,6 +15,23 @@ $( document ).ready(function() {
   });
 
 });
+
+function addUpload() {
+
+  var container = $("<div class='item'></div>");
+  container.css("background-image", `url("https://www.cabinetmakerwarehouse.com/wp-content/uploads/9242-gull-grey.jpg")`);
+  container.on("click", function () {
+
+    window.location.href = "/upload";
+
+  });
+
+  var nameDom = $(`<h1>Upload Video</h1>`);
+
+  container.append(nameDom);
+  $(".main").append(container);
+
+}
 
 function addVideo(id, icon, name, poster) {
 

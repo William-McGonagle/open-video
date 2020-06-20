@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Upload</title>
+  </head>
+  <body>
+    <form action="/api/v1/video/upload" method="post">
+      <label for="title">Title</label>
+      <input type="text" name="title" placeholder="TITLE">
+      <label for="description">Description</label>
+      <textarea name="description" rows="8" cols="80">Description</textarea>
+      <label for="icon">Icon</label>
+      <input type="file" name="icon">
+      <label for="video">Video</label>
+      <input type="file" name="video">
+    </form>
+  </body>
+</html>
