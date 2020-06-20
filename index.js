@@ -20,7 +20,7 @@ const sequelize = new Sequelize('database', 'username', 'password', {
   storage: 'database.sqlite'
 });
 const app = express();
-const port = 8000 || process.env.PORT;
+const port = process.env.PORT; 
 
 ///////////////////////
 // MODEL DEFINITIONS //
