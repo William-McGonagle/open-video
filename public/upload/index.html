@@ -5,15 +5,16 @@
     <title>Upload</title>
   </head>
   <body>
-    <form action="/api/v1/video/upload" method="post">
-      <label for="title">Title</label>
-      <input type="text" name="title" placeholder="TITLE">
-      <label for="description">Description</label>
-      <textarea name="description" rows="8" cols="80">Description</textarea>
-      <label for="icon">Icon</label>
-      <input type="file" name="icon">
-      <label for="video">Video</label>
-      <input type="file" name="video">
+    <form action="/api/v1/video/upload" encType="multipart/form-data" method="post">
+      <label for="title">Title</label><br>
+      <input type="text" name="title" placeholder="TITLE"><br>
+      <label for="description">Description</label><br>
+      <textarea name="description" rows="8" cols="80">Description</textarea><br>
+      <label for="icon">Icon</label><br>
+      <input type="file" name="icon"><br>
+      <label for="video">Video</label><br>
+      <input type="file" name="video"><br>
+      <input type="submit" name="" value="Upload">
     </form>
   </body>
 </html>
